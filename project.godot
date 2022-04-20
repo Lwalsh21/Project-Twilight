@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Project  Twilight"
+config/name="Project Twilight"
 run/main_scene="res://UI/Main_Menu.tscn"
 config/icon="res://icon.png"
 
