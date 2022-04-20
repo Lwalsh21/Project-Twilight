@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://UI/HUD.gd" type="Script" id=1]
-[ext_resource path="res://UI/Menu.gd" type="Script" id=2]
-[ext_resource path="res://Player/Player_Container.gd" type="Script" id=3]
-[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Asteroid/Asteroid.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Backgrounds/blue.png" type="Texture" id=6]
+[ext_resource path="res://UI/Menu.gd" type="Script" id=1]
+[ext_resource path="res://UI/HUD.gd" type="Script" id=2]
+[ext_resource path="res://Backgrounds/blue.png" type="Texture" id=3]
+[ext_resource path="res://Asteroid/Asteroid.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player/Player_Container.gd" type="Script" id=6]
+[ext_resource path="res://UI/Instructions_1.tscn" type="PackedScene" id=7]
 
-[node name="Level_2" type="Node2D"]
+[node name="Level_1" type="Node2D"]
 __meta__ = {
 "_editor_description_": "The root of the scene"
 }
@@ -15,35 +16,35 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 1023.0
 margin_bottom = 601.0
-texture = ExtResource( 6 )
+texture = ExtResource( 3 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Player_Container" type="Node2D" parent="."]
-script = ExtResource( 3 )
+script = ExtResource( 6 )
 
 [node name="Asteroid_Container" type="Node2D" parent="."]
 
-[node name="Asteroid" parent="Asteroid_Container" instance=ExtResource( 5 )]
+[node name="Asteroid" parent="Asteroid_Container" instance=ExtResource( 4 )]
 position = Vector2( 100, 100 )
 
-[node name="Asteroid2" parent="Asteroid_Container" instance=ExtResource( 5 )]
+[node name="Asteroid2" parent="Asteroid_Container" instance=ExtResource( 4 )]
 position = Vector2( 800, 500 )
 
 [node name="Effects" type="Node2D" parent="."]
 
 [node name="Enemy_Container" type="Node2D" parent="."]
 
-[node name="Enemy" parent="Enemy_Container" instance=ExtResource( 4 )]
+[node name="Enemy" parent="Enemy_Container" instance=ExtResource( 5 )]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="HUD" type="Control" parent="UI"]
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -81,7 +82,7 @@ autostart = true
 pause_mode = 2
 margin_right = 40.0
 margin_bottom = 40.0
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -120,6 +121,9 @@ text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Instructions_1" parent="UI" instance=ExtResource( 7 )]
+visible = false
 
 [connection signal="timeout" from="UI/HUD/Timer" to="UI/HUD" method="_on_Timer_timeout"]
 [connection signal="pressed" from="UI/Menu/Restart Game" to="UI/Menu" method="_on_Restart_Game_pressed"]
