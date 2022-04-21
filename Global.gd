@@ -47,4 +47,6 @@ func update_time(t):
 
 func _unhandled_input(event):
 	if score >= 1000:
-		var scene = get_tree().change_scene("res://Level_1.tscn")
+		var scene = get_tree().change_scene("res://UI/Instructions_1.tscn")
+	if score >= 2000:
+		var snene = get_tree().change_scene("res://UI/Instructions_2.tscn")

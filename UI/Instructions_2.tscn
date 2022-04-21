@@ -23,7 +23,7 @@ margin_left = 404.0
 margin_top = 193.0
 margin_right = 621.0
 margin_bottom = 207.0
-text = "Try to score above 2000 this time!"
+text = "Try to score above 3000 this time!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
