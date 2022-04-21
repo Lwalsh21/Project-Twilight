@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/Menu.gd" type="Script" id=1]
 [ext_resource path="res://UI/HUD.gd" type="Script" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Asteroid/Asteroid.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=6]
-[ext_resource path="res://UI/Instructions_1.tscn" type="PackedScene" id=7]
 
 [node name="Level_1" type="Node2D"]
 __meta__ = {
@@ -122,8 +121,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Instructions_1" parent="UI" instance=ExtResource( 7 )]
-visible = false
+[node name="Level_2" type="Label" parent="UI"]
+margin_right = 1024.0
+margin_bottom = 600.0
+text = "LEVEL 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="timeout" from="UI/HUD/Timer" to="UI/HUD" method="_on_Timer_timeout"]
 [connection signal="pressed" from="UI/Menu/Restart Game" to="UI/Menu" method="_on_Restart_Game_pressed"]

@@ -43,10 +43,3 @@ func update_time(t):
 	var hud = get_node_or_null("/root/Level_1/UI/HUD")
 	if hud != null:
 		hud.update_time()
-
-
-func _unhandled_input(_event):
-	if score >= 1000:
-		var scene = get_tree().change_scene("res://UI/Instructions_1.tscn")
-	if score >= 2000:
-		var scene = get_tree().change_scene("res://UI/Instructions_2.tscn")
